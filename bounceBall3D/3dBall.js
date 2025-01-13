@@ -26,7 +26,7 @@ function cY(pos) {
 //+++++ CANVAS DONE +++++ CANVAS DONE +++++ CANVAS DONE +++++ CANVAS DONE +++++ CANVAS DONE
 
 // ITEMS
-var gravity = { x: 0.0, y: -9.8 }; // Makes Gravity
+var gravity = { x: 0.0, y: -24.79 }; // Makes Gravity
 var timeStep = 1.0 / 60.0;
 
 var ball = {
