@@ -26,10 +26,14 @@ function cY(pos) {
 //+++++ CANVAS DONE +++++ CANVAS DONE +++++ CANVAS DONE +++++ CANVAS DONE +++++ CANVAS DONE
 
 // ITEMS
+var gravity = { x: 0.0, y: -24.79 }; // Makes Gravity
+var timeStep = 1.0 / 60.0;
+
 var ball = {
   // makes ball OBJ and sets the size(radius) and the postion(pos)
   radius: 0.2,
   pos: { x: 0.2, y: 0.2 },
+  vel: { x: 10.0, y: 15.0 }, // Gives the Ball a Velocity
 };
 // drawing =================================================================
 function draw() {
@@ -45,7 +49,29 @@ function draw() {
 
 // simulation =================================================================
 
-function simulate() {}
+function simulate() {
+  // Ads Gravity to the velocity
+  ball.vel.x += gravity.x * timeStep;
+  ball.vel.y += gravity.y * timeStep;
+
+  // adds Velocity to the obj
+  ball.pos.x += ball.vel.x * timeStep;
+  ball.pos.y += ball.vel.y * timeStep;
+
+  //Keeps The OBJ in the border
+  if (ball.pos.x < 0.0) {
+    ball.pos.x = 0.0;
+    ball.vel.x = -ball.vel.x;
+  }
+  if (ball.pos.x > simWidth) {
+    ball.pos.x = simWidth;
+    ball.vel.x = -ball.vel.x;
+  }
+  if (ball.pos.y < 0.0) {
+    ball.pos.y = 0.0;
+    ball.vel.y = -ball.vel.y;
+  }
+}
 
 // update browser =================================================================
 
