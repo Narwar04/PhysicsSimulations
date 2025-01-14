@@ -9,13 +9,17 @@
   <body>
     <h1>3d Ball</h1>
 
-    <div id="contaner"></div>
+    <button id = "buttonRun" onclick="run()">Run</button>
+    <button onclick="restart()">Restart</button>
 
-    <!--Adds the 3d libary-->
-    <script src="https://threejs.org/build/three.js"></script>    
+    <br><br>
+
     
-    <!--Adds the movable Camera-->
-    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <div id="container"></div>
+
+
+    <script src="https://unpkg.com/three@0.139.2/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.139.2/examples/js/controls/OrbitControls.js"></script>
     <script src="3dBall.js"></script>
   </body>
 </html>
